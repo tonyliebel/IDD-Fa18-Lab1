@@ -10,28 +10,40 @@ We've copied the questions from the lab here. Answer them below!
 
 ## Part A. Set Up a Breadboard
 
-[insert a photo of your breadboard setup here]
+
 
 
 ## Part B. Manually Blink a LED
 
 **a. What color stripes are on a 100 Ohm resistor?**
+Brown, Black, Brown, Tolerance
  
 **b. What do you have to do to light your LED?**
-
+Connect the Power from the Arduino to one side of the switch, diode to other side of switch, resistor on ground side of diode, resistor back to arduino ground.
 
 ## Part C. Blink a LED using Arduino
 
 ### 1. Blink the on-board LED
 
 **a. What line(s) of code do you need to change to make the LED blink (like, at all)?**
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(LED_BUILTIN, OUTPUT);
+}
 
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(100);                       // wait for a second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(100);                       // wait for a second
+}
 **b. What line(s) of code do you need to change to change the rate of blinking?**
-
+delay()
 **c. What circuit element would you want to add to protect the board and external LED?**
  
 **d. At what delay can you no longer *perceive* the LED blinking? How can you prove to yourself that it is, in fact, still blinking?**
-
+10ms is where you can no longer perceive the blink. By pointing a 30fps camera at it, I am able to confirm it is in fact still blinking.
 **e. Modify the code to make your LED blink your way. Save your new blink code to your lab 1 repository, with a link on the README.md.**
 
 
